@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="text-center" v-if="wishlistCount">
     <h3>Wishlists</h3>
     <hr>
     <div class="mt-3" v-for="wishlist in wishlists" :key="wishlist.id">
@@ -21,7 +21,10 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "Wishlists",
   computed: {
-    ...mapGetters({ wishlists: "wishlists/getWishList" })
+    ...mapGetters({
+      wishlists: "wishlists/getWishList",
+      wishlistCount: "wishlists/getWishlistCount"
+    })
     // products() {
     //   return this.$store.state.products;
     // }

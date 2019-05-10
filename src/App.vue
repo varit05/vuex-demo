@@ -1,11 +1,11 @@
 <template>
-  <div class="container mt-3">
+  <div class="container-fluid mt-3">
     <div class="row">
-      <Products class="col-6"/>
-      <Cart class="col-6"/>
+      <Products class="col-12 col-md-6"/>
+      <Cart class="col-12 col-md-6"/>
     </div>
     <div class="row mt-5">
-      <Wishlists class="col-6"/>
+      <Wishlists class="col-12 col-md-6"/>
     </div>
   </div>
 </template>

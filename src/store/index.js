@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-import wishlists from "./wishlists";
+import wishlists from "./modules/wishlists";
 
 // Registering Vuex to Vue
 Vue.use(Vuex);
@@ -29,6 +29,9 @@ export default new Vuex.Store({
       return state.cart.reduce((total, product) => {
         return (total += product.price * product.quantity);
       }, 0);
+    },
+    getCartProductCount(state) {
+      return state.cart.length;
     }
   },
   mutations: {
