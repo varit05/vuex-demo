@@ -27,10 +27,17 @@ export default {
     ...mapState({
       cart: state => state.cart
     }),
+    // Access getters directly
+    // total() {
+    //   return this.$store.getters.getCartTotal;
+    // },
+    // If you want to map a getter to a different name, use an object
     ...mapGetters({
       total: "getCartTotal",
       cartCount: "getCartProductCount"
-    })
+    }),
+    // Pass a String array when the name is similar to state tree
+    ...mapGetters(["getCartTotal", "getCartProductCount"])
   },
   methods: {
     // Map multiple actions to different modules
