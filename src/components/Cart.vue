@@ -13,6 +13,7 @@
       </div>
       <div>
         <hr>
+        <h4>Item count: {{cartCount}}</h4>
         <h4>Total: {{total}}</h4>
       </div>
     </div>
@@ -35,11 +36,15 @@ export default {
     ...mapGetters({
       total: "getCartTotal",
       cartCount: "getCartProductCount"
-    }),
+    })
     // Pass a String array when the name is similar to state tree
-    ...mapGetters(["getCartTotal", "getCartProductCount"])
+    // ...mapGetters(["getCartTotal", "getCartProductCount"])
   },
   methods: {
+    // Access directly from store
+    removeFromCart(product) {
+      this.$store.dispatch("removeFromCart", product);
+    },
     // Map multiple actions to different modules
     ...mapActions(["removeFromCart"]),
     ...mapActions("wishlists", ["addToWishlist"])

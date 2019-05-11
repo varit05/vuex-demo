@@ -1,5 +1,10 @@
 <template>
   <div class="container-fluid mt-3">
+    <header class="row">
+      <div class="offset-9 col-3">
+        <h4>Cart: {{cartItems}}</h4>
+      </div>
+    </header>
     <div class="row">
       <Products class="col-12 col-md-6"/>
       <Cart class="col-12 col-md-6"/>
@@ -14,6 +19,7 @@
 import Products from "@/components/Products.vue";
 import Cart from "@/components/Cart.vue";
 import Wishlists from "@/components/Wishlists.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "app",
@@ -21,6 +27,11 @@ export default {
     Products,
     Cart,
     Wishlists
+  },
+  computed: {
+    ...mapGetters({
+      cartItems: "getCartProductCount"
+    })
   }
 };
 </script>
