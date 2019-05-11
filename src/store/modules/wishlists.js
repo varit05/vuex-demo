@@ -3,9 +3,6 @@ const state = {
 };
 
 const getters = {
-  getWishList(state) {
-    return state.wishlists;
-  },
   getWishlistCount(state) {
     return state.wishlists.length;
   }
@@ -24,7 +21,7 @@ const actions = {
   addToWishlist({ commit }, payload) {
     commit("ADD_TO_WISHLIST", payload);
   },
-  removeFronWishlist({ commit }, payload) {
+  removeFromWishlist({ commit }, payload) {
     commit("REMOVE_FROM_WISHLIST", payload);
   }
 };
